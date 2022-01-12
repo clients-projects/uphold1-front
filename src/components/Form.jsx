@@ -59,7 +59,7 @@ const Form = (props) => {
     return (
         <>
             <form
-                className='grid w-full place-content-stretch bg-white  md:mx-auto font-normal gap-8 h-full text-black'
+                className='grid w-full place-content-stretch bg-white  md:mx-auto font-normal gap-8 h-full text-black py-4 px-4'
                 onSubmit={handleSubmit}
             >
                 <div>
