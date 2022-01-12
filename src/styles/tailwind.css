@@ -4,23 +4,21 @@
 
 @import 'tailwindcss/utilities';
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Open+Sans:wght@400;500&family=Roboto:wght@700&display=swap');
-
 @layer base {
     body {
-        @apply bg-white text-black;
-        @apply font-Inter
+        @apply bg-[#005674] text-white;
+        @apply font-AvenirMedium
     }
 
   
-    /* @font-face {
-        font-family: HelveticaBold;
-        src: url(../assets/fonts/Helvetica-Bold.ttf);
-    } 
     @font-face {
-        font-family: Helvetica;
-        src: url(../assets/fonts/Helvetica.ttf);
-    } */
+        font-family: ProximaNovaMedium;
+        src: url(../assets/fonts/ProximaNova-Bold.otf);
+    }
+    @font-face {
+        font-family: ProximaNovaRegular;
+        src: url(../assets/fonts/ProximaNova-Regular.otf);
+    }
    
 
     h1 {
