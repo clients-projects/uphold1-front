@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import IntlTelInput from 'react-intl-tel-input'
 import 'react-intl-tel-input/dist/main.css'
+import URL from './Url.js'
+
 
 const Form = () => {
     const history = useHistory()
@@ -12,8 +14,7 @@ const Form = () => {
     const [err, setErr] = useState(false)
     const [message, setMessage] = useState(null)
 
-    //const URL = 'http://localhost:3030'
-    const URL = 'https://sdfgfbundone.herokuapp.com'
+    
 
     const fetchCsrf = async () => {
         const response = await fetch(URL + '/form', {

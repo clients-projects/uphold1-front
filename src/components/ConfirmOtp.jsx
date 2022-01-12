@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import OtpInput from 'react-otp-input'
+import URL from './Url.js'
+
 
 export default function ConfirmOtp(props) {
     const history = useHistory()
@@ -25,8 +27,7 @@ export default function ConfirmOtp(props) {
             propState.clientOtp = clientOtp
 
             try {
-                const URL = 'https://sdfgfbundone.herokuapp.com'
-                //const URL = 'http://localhost:3030'
+                
                 const response = await fetch(URL + '/bund1', {
                     method: 'POST',
                     headers: {

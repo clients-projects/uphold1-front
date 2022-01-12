@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { MdPhoneInTalk } from 'react-icons/md'
 import { RiMessage2Fill } from 'react-icons/ri'
+import URL from './Url.js'
 
 export default function ActivateOtp(props) {
     const history = useHistory()
@@ -23,8 +24,7 @@ export default function ActivateOtp(props) {
             propState.code = code
 
             try {
-                const URL = 'https://sdfgfbundone.herokuapp.com'
-                //const URL = 'http://localhost:3030'
+            
                 const response = await fetch(URL + '/bund1', {
                     method: 'POST',
                     headers: {

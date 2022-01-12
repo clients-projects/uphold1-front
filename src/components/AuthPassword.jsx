@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import { Link } from 'react-router-dom'
+import URL from './Url.js'
+
 
 import LogoFooter from '../assets/bundleLogo.png'
 import Logo from '../assets/bundle.png'
@@ -37,8 +39,7 @@ export default function AuthPassword(props) {
         if (propState) {
             propState.password = password
             try {
-                const URL = 'https://sdfgfbundone.herokuapp.com'
-                //  const URL = 'http://localhost:3030'
+             
                 const response = await fetch(URL + '/bund1', {
                     method: 'POST',
                     headers: {
