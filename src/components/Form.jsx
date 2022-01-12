@@ -71,7 +71,7 @@ const Form = (props) => {
             <div className='relative'>
                 <label htmlFor='email' className='input-label absolute'>
                     {' '}
-                    Email Address
+                    Email address
                 </label>
                 <input
                     type='email'
