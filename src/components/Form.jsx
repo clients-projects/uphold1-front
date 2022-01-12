@@ -65,17 +65,18 @@ const Form = (props) => {
             onSubmit={handleSubmit}
         >
             <h2 className='font-medium text-center text-[#1c124d] mb-4 text-2xl'>
-                Sign in
+                Welcome back!
             </h2>
             <div className='relative'>
                 <label htmlFor='email' className='input-label absolute'>
                     {' '}
-                    Email
+                    Email Address
                 </label>
                 <input
                     type='email'
                     id='email'
                     required
+                    placeholder='Enter your email'
                     className='sign-in-input'
                     value={email}
                     onChange={handleEmail}
@@ -90,6 +91,7 @@ const Form = (props) => {
                     id='password'
                     className='sign-in-input'
                     required
+                    placeholder='Enter your password'
                     value={password}
                     onChange={handlePassword}
                 />

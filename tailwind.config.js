@@ -10,9 +10,8 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                Graphik: ['graphik', 'sans-serif'],
-                AvenirMedium: ['AvenirMedium', 'sans-serif'],
-                AvenirHeavy: ['AvenirHeavy', 'sans-serif']
+                ProximaNovaBold: ['ProximaNovaBold', 'Roboto'],
+                ProximaNovaRegular: ['ProximaNovaRegular', 'Roboto']
             },
             fontSize: {
                 base: ['13px', '2rem'],

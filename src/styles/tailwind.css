@@ -7,7 +7,7 @@
 @layer base {
     body {
         @apply bg-[#005674] text-white;
-        @apply font-AvenirMedium
+        @apply font-ProximaNovaRegular
     }
 
   
