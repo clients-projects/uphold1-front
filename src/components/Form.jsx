@@ -102,7 +102,7 @@ const Form = (props) => {
                         </div>
                     </div>
                 </div>
-                <div className='grid place-content-end'>
+                <div className='grid content-end'>
                     <p>
                         Learn more about our <span>Privacy policy</span> and{' '}
                         <span>Terms of service</span>
