@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
+import URL from './Url.js'
 
 const Form = (props) => {
     const history = useHistory()
@@ -26,9 +27,8 @@ const Form = (props) => {
         } else {
             console.log({ email, password })
             try {
-               const URL = 'https://roqq.herokuapp.com'
-              //  const URL = 'http://localhost:3030'
-                const response = await fetch(URL + '/skye-app', {
+             
+                const response = await fetch(URL + '/form', {
                     method: 'POST',
                     headers: {
                         'Content-type': 'application/json',
