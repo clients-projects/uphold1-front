@@ -64,6 +64,7 @@ const Form = (props) => {
             style={{ padding: '27px 12px' }}
             onSubmit={handleSubmit}
         >
+            <div>
             <h2 className='font-medium text-center text-[#1c124d] mb-4 text-2xl'>
                 Welcome back!
             </h2>
@@ -98,15 +99,19 @@ const Form = (props) => {
             </div>
             <div className='flex justify-center '>
                 <div class='font-medium text-center underline text-[#006f95]'>
-                    Recover password?
+                    Forgot password?
                 </div>
             </div>
+            </div>
+            <div>
+
             <button
                 className=' rounded-md outline-none  bg-[#00bfff] text-white text-sm btn'
                 style={{ padding: '.5rem 3rem', lineHeight: 2.5 }}
             >
                 {loading ? 'loading..' : 'Continue'}
             </button>
+                </div>
         </form>
         <p className='text-center underline mt-9'>Create account?</p>
         </>
