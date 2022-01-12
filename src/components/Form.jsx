@@ -97,7 +97,7 @@ const Form = (props) => {
                         />
                     </div>
                     <div className='flex justify-center '>
-                        <div class='font-medium text-center underline text-[#006f95]'>
+                        <div className='font-medium text-center underline text-[#006f95]'>
                             Forgot password?
                         </div>
                     </div>
