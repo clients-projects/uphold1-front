@@ -19,7 +19,7 @@
 }
 
 .sign-in-input:focus {
-    border: 1px solid #00bfff !important;
+    border: 1px solid black !important;
     transition: 0.2s ease-in-out;
 }
 
@@ -38,22 +38,6 @@
     box-shadow: 0 1px 3px rgb(0 0 0 / 10%);
 }
 
-.loginForm {
-        line-height: 1.5;
-    word-spacing: 1px;
-    -webkit-text-size-adjust: 100%;
-    -webkit-font-smoothing: antialiased;
-    color: #8a6411;
-    font-size: 16px;
-    --bg-opacity: 1;
-    box-sizing: border-box;
-    margin: 0;
-    background: #fff;
-    border: 1px solid #dededf;
-    border-radius: 8px;
-    box-shadow: 0 1px 5px rgba(63,63,68,.1);
-    padding: 27px 12px;
-}
 
 .pinlogin .pinlogin-field {
     box-sizing: border-box;
