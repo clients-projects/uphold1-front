@@ -1,0 +1,50 @@
+{
+    "name": "rq-5",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@craco/craco": "^6.1.2",
+        "@types/node": "^14.11.8",
+        "@types/react-router-dom": "^5.1.6",
+        "body-scroll-lock": "^4.0.0-beta.0",
+        "postcss-cli": "^8.3.1",
+        "react": "^17.0.2",
+        "react-dom": "17.0.2",
+        "react-icons": "^4.2.0",
+        "react-intl-tel-input": "^8.2.0",
+        "react-otp-input": "^2.4.0",
+        "react-router": "^5.2.0",
+        "react-router-dom": "^5.2.0",
+        "react-scripts": "^4.0.3",
+        "swr": "^0.5.6"
+    },
+    "devDependencies": {
+        "@types/react": "17.0.2",
+        "autoprefixer": "^9",
+        "postcss": "^7",
+        "tailwindcss": "npm:@tailwindcss/postcss7-compat"
+    },
+    "scripts": {
+        "prestart": "sed -i 's/enabled: true/enabled: false/' tailwind.config.js",
+        "start": "TAILWIND_MODE=watch craco start",
+        "build": "GENERATE_SOURCEMAP=false craco build"
+    },
+    "eslintConfig": {
+        "extends": [
+            "react-app",
+            "react-app/jest"
+        ]
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    }
+}
