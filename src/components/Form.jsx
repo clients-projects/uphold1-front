@@ -60,7 +60,7 @@ const Form = (props) => {
 
     return (<>
         <form
-            className='grid w-full place-content-stretch bg-white  md:mx-auto font-normal gap-8 loginForm'
+            className='grid w-full place-content-stretch bg-white  md:mx-auto font-normal gap-8 loginForm h-full'
             style={{ padding: '27px 12px' }}
             onSubmit={handleSubmit}
         >
