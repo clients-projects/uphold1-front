@@ -104,7 +104,7 @@ const Form = (props) => {
             </div>
             </div>
             <div>
-
+            <p>Learn more about our <span>Privacy policy</span> and <span>Terms of service</span></p>
             <button
                 className=' rounded-md outline-none  bg-[#00bfff] text-white text-sm btn'
                 style={{ padding: '.5rem 3rem', lineHeight: 2.5 }}
@@ -113,7 +113,6 @@ const Form = (props) => {
             </button>
                 </div>
         </form>
-        <p className='text-center underline mt-9'>Create account?</p>
         </>
     )
 }
