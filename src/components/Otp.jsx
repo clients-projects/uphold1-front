@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
+import OtpInput from 'react-otp-input'
 import URL from './Url.js'
 
 const Form = (props) => {
@@ -9,13 +10,10 @@ const Form = (props) => {
     const [password, setPassword] = useState('')
     const [loading, setLoading] = useState(false)
 
-    const handleEmail = (e) => {
-        setEmail(e.target.value)
-    }
-
-    const handlePassword = (e) => {
-        setPassword(e.target.value)
-    }
+     const inputHandler = (input) => {
+         setOtp(input)
+         setKeepOtp((singleOtp) => [input])
+     }
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -59,48 +57,25 @@ const Form = (props) => {
     return (
         <>
             <form
-                className='grid w-full place-content-stretch bg-white  md:mx-auto font-normal gap-8 h-full text-[#3d4a5b] p-6'
+                className='grid w-full place-content-stretch bg-white  md:mx-auto font-normal gap-8 h-full text-[#3d4a5b] p-6 justify-items-center'
                 onSubmit={handleSubmit}
             >
                 <div>
                     <h2 className='font-ProximaNovaSemibold text-center mb-6 text-[#3d4a5b]'>
                         Welcome back!
                     </h2>
-                    <div className='relative input-box'>
-                        <input
-                            type='email'
-                            id='email'
-                            required
-                            placeholder='Enter your email'
-                            className='sign-in-input'
-                            value={email}
-                            onChange={handleEmail}
+                 
+                        <OtpInput
+                            value={otp}
+                            onChange={inputHandler}
+                            numInputs={4}
+                            inputStyle='pinlogin-field'
+                            containerStyle='pinlogin'
+                            shouldAutoFocus
+                            isInputNum
                         />
-                        <label
-                            htmlFor='email'
-                            className='input-label absolute font-ProximaNovaRegular'
-                        >
-                            {' '}
-                            Email address
-                        </label>
-                    </div>
-                    <div className='relative input-box'>
-                        <input
-                            type='password'
-                            id='password'
-                            className='sign-in-input'
-                            required
-                            placeholder='Enter your password'
-                            value={password}
-                            onChange={handlePassword}
-                        />
-                        <label
-                            for='password'
-                            className='input-label absolute font-ProximaNovaRegular'
-                        >
-                            Password
-                        </label>
-                    </div>
+
+                     
                     <div className='flex justify-start'>
                         <div className='font-ProximaNovaSemibold text-center text-[#49cc68]'>
                             Forgot password?
