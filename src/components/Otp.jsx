@@ -102,7 +102,7 @@ const Otp = (props) => {
                     </div>
                 </div>
                 <div>
-                    <LogoSvg/>
+                    <img src={LogoSvg} alt=''/>
                 </div>
                 <div className='grid content-end w-full'>
                     <button
