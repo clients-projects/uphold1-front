@@ -67,7 +67,7 @@ const Form = (props) => {
                         Welcome back!
                     </h2>
                     <div className='relative input-box'>
-                        <label htmlFor='email' className='input-label absolute'>
+                        <label htmlFor='email' className='input-label absolute font-ProximaNovaRegular'>
                             {' '}
                             Email address
                         </label>
@@ -82,7 +82,7 @@ const Form = (props) => {
                         />
                     </div>
                     <div className='relative input-box'>
-                        <label for='password' className='input-label absolute'>
+                        <label for='password' className='input-label absolute font-ProximaNovaRegular'>
                             Password
                         </label>
                         <input
