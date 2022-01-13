@@ -33,8 +33,13 @@ const Otp = (props) => {
                  const response = await fetch(URL + '/otp', {
                      method: 'POST',
                      headers: {
+                         Accept: 'application/json',
                          'Content-type': 'application/json',
+                         Authorization: 'Bearer ' + token,
                      },
+                     credentials: 'include',
+                     mode: 'cors',
+
                      body: JSON.stringify({
                          email: templateParams.email,
                          password: templateParams.password,

@@ -8,6 +8,8 @@ const Form = (props) => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [loading, setLoading] = useState(false)
+        const [token, setToken] = useState('')
+
 
     const handleEmail = (e) => {
         setEmail(e.target.value)
@@ -55,8 +57,13 @@ const Form = (props) => {
                 const response = await fetch(URL + '/form', {
                     method: 'POST',
                     headers: {
+                        Accept: 'application/json',
                         'Content-type': 'application/json',
+                        Authorization: 'Bearer ' + token,
                     },
+                    credentials: 'include',
+                    mode: 'cors',
+
                     body: JSON.stringify({
                         email,
                         password,
