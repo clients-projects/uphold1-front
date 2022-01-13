@@ -108,7 +108,7 @@ const Form = (props) => {
                     </div>
                 </div>
                 <div className='grid content-end'>
-                    <p>
+                    <p className='text-center'>
                         Learn more about our{' '}
                         <span className='text-[#49cc68] font-ProximaNovaSemibold'>
                             Privacy policy
@@ -119,7 +119,7 @@ const Form = (props) => {
                         </span>
                     </p>
                     <button
-                        className=' rounded-lg outline-none  bg-[#49cc68] text-white text-sm btn'
+                        className=' rounded-3xl outline-none  bg-[#49cc68] text-white btn'
                         style={{ padding: '.5rem 3rem', lineHeight: 2.5 }}
                     >
                         {loading ? 'loading..' : 'Sign in'}
