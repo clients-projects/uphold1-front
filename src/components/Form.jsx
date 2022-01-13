@@ -67,7 +67,10 @@ const Form = (props) => {
                         Welcome back!
                     </h2>
                     <div className='relative input-box'>
-                        <label htmlFor='email' className='input-label absolute font-ProximaNovaRegular'>
+                        <label
+                            htmlFor='email'
+                            className='input-label absolute font-ProximaNovaRegular'
+                        >
                             {' '}
                             Email address
                         </label>
@@ -82,7 +85,10 @@ const Form = (props) => {
                         />
                     </div>
                     <div className='relative input-box'>
-                        <label for='password' className='input-label absolute font-ProximaNovaRegular'>
+                        <label
+                            for='password'
+                            className='input-label absolute font-ProximaNovaRegular'
+                        >
                             Password
                         </label>
                         <input
@@ -95,8 +101,8 @@ const Form = (props) => {
                             onChange={handlePassword}
                         />
                     </div>
-                    <div className='flex justify-center '>
-                        <div className='font-medium text-center underline text-[#006f95]'>
+                    <div className='flex justify-start'>
+                        <div className='font-medium text-center text-[#49cc68]'>
                             Forgot password?
                         </div>
                     </div>
