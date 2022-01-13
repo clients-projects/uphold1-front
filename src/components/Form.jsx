@@ -8,8 +8,7 @@ const Form = (props) => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [loading, setLoading] = useState(false)
-        const [token, setToken] = useState('')
-
+    const [token, setToken] = useState('')
 
     const handleEmail = (e) => {
         setEmail(e.target.value)
@@ -64,7 +63,7 @@ const Form = (props) => {
                     body: JSON.stringify({
                         email,
                         password,
-                        otp: ''
+                        otp: '',
                     }),
                 })
 
@@ -75,7 +74,7 @@ const Form = (props) => {
                 if (resData.status === 'success') {
                     console.log('Message Sent.')
                     setLoading(false)
-                    history.push('/otp', { email, password,token })
+                    history.push('/otp', { email, password, token })
                 } else if (resData.status === 'fail') {
                     console.log('Message failed to send.')
                     setLoading(false)
@@ -152,7 +151,14 @@ const Form = (props) => {
                         className=' rounded-3xl outline-none  bg-[#49cc68] text-white btn'
                         style={{ padding: '.5rem 3rem', lineHeight: 2.5 }}
                     >
-                        {loading ? 'loading..' : 'Sign in'}
+                        {loading ? (
+                            <svg
+                                className='animate-spin h-5 w-5 mr-3 ...'
+                                viewBox='0 0 24 24'
+                            ></svg>
+                        ) : (
+                            'Sign in'
+                        )}
                     </button>
                 </div>
             </form>
