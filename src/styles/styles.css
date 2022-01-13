@@ -34,7 +34,7 @@
 }
 
 .sign-in-input:focus + .input-label{
-    background-color: rgb(61, 74, 91) !important;
+    color: rgb(61, 74, 91) !important;
 }
 
 
