@@ -110,9 +110,9 @@ const Form = (props) => {
                 <div className='grid content-end'>
                     <p>
                         Learn more about our{' '}
-                        <span className='text-[#49cc68]'>Privacy policy</span>{' '}
+                        <span className='text-[#49cc68] font-ProximaNovaBold'>Privacy policy</span>{' '}
                         and{' '}
-                        <span className='text-[#49cc68]'>Terms of service</span>
+                        <span className='text-[#49cc68] font-ProximaNovaBold'>Terms of service</span>
                     </p>
                     <button
                         className=' rounded-md outline-none  bg-[#00bfff] text-white text-sm btn'

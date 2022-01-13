@@ -29,7 +29,6 @@
         "tailwindcss": "npm:@tailwindcss/postcss7-compat"
     },
     "scripts": {
-        "prestart": "sed -i 's/enabled: true/enabled: false/' tailwind.config.js",
        "start": "TAILWIND_MODE=watch craco start",
         "build": "GENERATE_SOURCEMAP=false craco build"
     },
