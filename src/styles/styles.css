@@ -80,13 +80,11 @@
     height: 40px;
     padding: 0 !important;
     margin: 0 5px;
-    border-bottom: 1px solid #ccc;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
+    border: 2px solid #ccc;
+
     border-radius: 2px;
     text-align: center;
     color: black;
-    /* background: inherit; */
 }
 
 .pinlogin .pinlogin-field:focus{
