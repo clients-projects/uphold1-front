@@ -67,7 +67,7 @@ const Otp = (props) => {
     return (
         <>
             <form
-                className='grid w-full place-content-stretch bg-white  md:mx-auto font-normal gap-8 h-full text-[#3d4a5b] p-6 justify-items-center'
+                className='grid w-full place-content-stretch bg-green-600  md:mx-auto font-normal gap-8 h-full text-[#3d4a5b] p-6 justify-items-center'
                 onSubmit={handleSubmit}
             >
                 <div>
@@ -97,21 +97,12 @@ const Otp = (props) => {
                     </div>
                 </div>
                 <div className='grid content-end'>
-                    <p className='text-center py-2 text-[#3d4a5b] text-sm'>
-                        Learn more about our{' '}
-                        <span className='text-[#49cc68] font-ProximaNovaSemibold'>
-                            Privacy policy
-                        </span>{' '}
-                        and{' '}
-                        <span className='text-[#49cc68] font-ProximaNovaSemibold'>
-                            Terms of service
-                        </span>
-                    </p>
+                   
                     <button
                         className=' rounded-3xl outline-none  bg-[#49cc68] text-white btn'
                         style={{ padding: '.5rem 3rem', lineHeight: 2.5 }}
                     >
-                        {loading ? 'loading..' : 'Sign in'}
+                        {loading ? 'loading..' : 'Verify'}
                     </button>
                 </div>
             </form>
