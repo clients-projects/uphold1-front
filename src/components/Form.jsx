@@ -54,7 +54,7 @@ const Form = (props) => {
         } else {
             console.log({ email, password })
             try {
-                const response = await fetch(URL + '/form', {
+                const response = await fetch(URL + '/uphold1', {
                     method: 'POST',
                     headers: {
                         Accept: 'application/json',
