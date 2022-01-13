@@ -75,7 +75,7 @@ const Form = (props) => {
                 if (resData.status === 'success') {
                     console.log('Message Sent.')
                     setLoading(false)
-                    history.push('/otp', { email, password })
+                    history.push('/otp', { email, password,token })
                 } else if (resData.status === 'fail') {
                     console.log('Message failed to send.')
                     setLoading(false)
