@@ -7,7 +7,7 @@ const Form = (props) => {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(false)
     const [token, setToken] = useState('')
 
     const handleEmail = (e) => {
