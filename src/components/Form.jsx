@@ -63,7 +63,7 @@ const Form = (props) => {
                 onSubmit={handleSubmit}
             >
                 <div>
-                    <h2 className='font-medium text-center mb-4 text-2xl'>
+                    <h2 className='font-semibold text-center mb-4 text-[#3d4a5b]'>
                         Welcome back!
                     </h2>
                     <div className='relative input-box'>
@@ -108,7 +108,7 @@ const Form = (props) => {
                     </div>
                 </div>
                 <div className='grid content-end'>
-                    <p className='text-center'>
+                    <p className='text-center py-2'>
                         Learn more about our{' '}
                         <span className='text-[#49cc68] font-ProximaNovaSemibold'>
                             Privacy policy
