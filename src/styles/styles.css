@@ -1,21 +1,31 @@
 .sign-in-input {
-    -webkit-text-size-adjust: 100%;
-    -webkit-font-smoothing: antialiased;
-    --bg-opacity: 1;
+   
     box-sizing: border-box;
     font-family: inherit;
     margin: 0;
     overflow: visible;
     line-height: inherit;
-    border: 1px solid #dededf;
     box-shadow: 0 1px 4px rgba(63, 63, 68, 0.1);
-    border-radius: 4px;
-    padding: 13px 16px;
     width: 100%;
     outline: none;
     transition: 0.2s ease-in-out;
     font-size: 14px;
     background: #fff;
+
+        border: 2px solid rgb(188, 202, 216);
+    border-radius: 8px;
+   
+    -webkit-box-align: center;
+    align-items: center;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+.input-box{
+    padding-bottom: 32px;
+    padding-top: 8px;
+    position: relative;
 }
 
 .sign-in-input:focus {

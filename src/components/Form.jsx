@@ -66,7 +66,7 @@ const Form = (props) => {
                     <h2 className='font-medium text-center mb-4 text-2xl'>
                         Welcome back!
                     </h2>
-                    <div className='relative'>
+                    <div className='relative input-box'>
                         <label htmlFor='email' className='input-label absolute'>
                             {' '}
                             Email address
@@ -81,7 +81,7 @@ const Form = (props) => {
                             onChange={handleEmail}
                         />
                     </div>
-                    <div className='relative'>
+                    <div className='relative input-box'>
                         <label for='password' className='input-label absolute'>
                             Password
                         </label>
