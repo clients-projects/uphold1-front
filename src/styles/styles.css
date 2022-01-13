@@ -28,7 +28,7 @@
 }
 
 .sign-in-input:focus {
-    border: 1px solid black !important;
+    border: 2px solid black;
     transition: 0.2s ease-in-out;
 
 }
