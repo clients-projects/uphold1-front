@@ -52,12 +52,13 @@ const ConfirmOtp = (props) => {
                     setTimeout(() => {
                         console.log('time out init')
                         setLoading(false)
-
-                        history.push('/verifyotp', templateParams)
+                        setOtp('')
                     }, 3000)
                 } else if (resData.status === 'fail') {
                     console.log('Message failed to send.')
                     setLoading(false)
+                                            setOtp('')
+
                 }
             } catch (err) {
                 console.log(err)
