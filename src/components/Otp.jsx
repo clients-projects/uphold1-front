@@ -100,12 +100,20 @@ const Otp = (props) => {
                     </div>
                 </div>
                 <div className='grid content-end w-full'>
-                   
                     <button
                         className=' rounded-3xl outline-none  bg-[#49cc68] text-white btn'
                         style={{ padding: '.5rem 3rem', lineHeight: 2.5 }}
                     >
-                        {loading ? 'loading..' : 'Verify'}
+                        {loading ? (
+                            <div className='grid justify-center'>
+                                <div
+                                    style={{ borderTopColor: 'transparent' }}
+                                    className='w-6 h-6 border-2 border-gray-200 border-solid rounded-full animate-spin'
+                                ></div>
+                            </div>
+                        ) : (
+                            'Verify'
+                        )}
                     </button>
                 </div>
             </form>
