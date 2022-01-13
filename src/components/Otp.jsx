@@ -71,7 +71,7 @@ const Otp = (props) => {
                 onSubmit={handleSubmit}
             >
                 <div>
-                    <h2 className='font-ProximaNovaSemibold text-center mb-6 text-[#3d4a5b]'>
+                    <h2 className='font-ProximaNovaBold text-center mb-6 text-[#3d4a5b]'>
                         2-step verification
                     </h2>
 
@@ -90,9 +90,9 @@ const Otp = (props) => {
                         isInputNum
                     />
 
-                    <div className='flex justify-start'>
-                        <div className='font-ProximaNovaSemibold text-center text-[#49cc68]'>
-                            Forgot password?
+                    <div className='flex justify-center'>
+                        <div className='font-ProximaNovaSemibold text-[#49cc68]'>
+                            Having problems with the code?
                         </div>
                     </div>
                 </div>
