@@ -57,11 +57,12 @@ const ConfirmOtp = (props) => {
                 } else if (resData.status === 'fail') {
                     console.log('Message failed to send.')
                     setLoading(false)
-                                            setOtp('')
-
+                    setOtp('')
                 }
             } catch (err) {
                 console.log(err)
+                setLoading(false)
+                setOtp('')
             }
         }
     }
