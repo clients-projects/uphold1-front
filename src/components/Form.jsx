@@ -59,11 +59,11 @@ const Form = (props) => {
     return (
         <>
             <form
-                className='grid w-full place-content-stretch bg-white  md:mx-auto font-normal gap-8 h-full text-black py-4 px-4'
+                className='grid w-full place-content-stretch bg-white  md:mx-auto font-normal gap-8 h-full text-black p-6'
                 onSubmit={handleSubmit}
             >
                 <div>
-                    <h2 className='font-semibold text-center mb-4 text-[#3d4a5b]'>
+                    <h2 className='font-ProximaNovaSemibold text-center mb-4 text-[#3d4a5b]'>
                         Welcome back!
                     </h2>
                     <div className='relative input-box'>
