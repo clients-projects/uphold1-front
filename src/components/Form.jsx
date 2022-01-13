@@ -63,7 +63,7 @@ const Form = (props) => {
                 onSubmit={handleSubmit}
             >
                 <div>
-                    <h2 className='font-ProximaNovaSemibold text-center mb-4 text-[#3d4a5b] mb-2'>
+                    <h2 className='font-ProximaNovaSemibold text-center mb-6 text-[#3d4a5b]'>
                         Welcome back!
                     </h2>
                     <div className='relative input-box'>
