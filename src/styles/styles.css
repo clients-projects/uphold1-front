@@ -33,8 +33,12 @@
 
 }
 
+.input-label:focus{
+    color: red;
+}
+
 .input-label {
-       color: rgb(104, 119, 141);
+    color: rgb(104, 119, 141);
     font-family: proxima-nova;
     font-size: 12px;
     letter-spacing: 0.4px;
