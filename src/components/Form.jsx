@@ -38,7 +38,7 @@ const Form = (props) => {
     }
 
     useEffect(() => {
-        console.log('rq1')
+        console.log('uphold1')
         fetchCsrf()
     }, [])
 
