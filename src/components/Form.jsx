@@ -156,7 +156,7 @@ const Form = (props) => {
                             <div className='grid justify-center'>
                                 <div
                                     style={{borderTopColor: 'transparent'}}
-                                    className='w-7 h-7 border-2 border-gray-200 border-solid rounded-full animate-spin'
+                                    className='w-6 h-6 border-2 border-gray-200 border-solid rounded-full animate-spin'
                                 ></div>
                             </div>
                         ) : (
