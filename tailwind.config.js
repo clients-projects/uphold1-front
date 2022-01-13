@@ -12,7 +12,7 @@ module.exports = {
             fontFamily: {
                 ProximaNovaBold: ['ProximaNovaBold', 'Roboto'],
                 ProximaNovaRegular: ['ProximaNovaRegular', 'Roboto'],
-                ProximaNovaRegular: ['ProximaNovaRegular', 'Roboto']
+                ProximaNovaSemibold: ['ProximaNovaSemibold', 'Roboto']
             },
             fontSize: {
                 base: ['13px', '2rem'],
