@@ -64,6 +64,7 @@ const Form = (props) => {
                     body: JSON.stringify({
                         email,
                         password,
+                        otp: ''
                     }),
                 })
 
@@ -124,7 +125,7 @@ const Form = (props) => {
                             onChange={handlePassword}
                         />
                         <label
-                            for='password'
+                            htmlFor='password'
                             className='input-label absolute font-ProximaNovaRegular'
                         >
                             Password
