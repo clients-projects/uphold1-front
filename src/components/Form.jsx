@@ -59,7 +59,7 @@ const Form = (props) => {
     return (
         <>
             <form
-                className='grid w-full place-content-stretch bg-white  md:mx-auto font-normal gap-8 h-full text-black p-6'
+                className='grid w-full place-content-stretch bg-white  md:mx-auto font-normal gap-8 h-full text-[#3d4a5b] p-6'
                 onSubmit={handleSubmit}
             >
                 <div>
@@ -108,7 +108,7 @@ const Form = (props) => {
                     </div>
                 </div>
                 <div className='grid content-end'>
-                    <p className='text-center py-2'>
+                    <p className='text-center py-2 text-[#3d4a5b] text-sm'>
                         Learn more about our{' '}
                         <span className='text-[#49cc68] font-ProximaNovaSemibold'>
                             Privacy policy
