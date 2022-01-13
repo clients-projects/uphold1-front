@@ -153,11 +153,11 @@ const Form = (props) => {
                     >
                         {loading ? (
                             
-                            <div>
+                            <div className='grid justify-center'>
                                 <div
                                     style={{borderTopColor: 'transparent'}}
                                     className='w-7 h-7 border-2 border-gray-200 border-solid rounded-full animate-spin'
-                                >fdf</div>
+                                ></div>
                             </div>
                         ) : (
                             'Sign in'
