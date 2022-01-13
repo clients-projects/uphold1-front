@@ -4,15 +4,14 @@
     font-family: inherit;
     margin: 0;
     overflow: visible;
-    line-height: inherit;
-    box-shadow: 0 1px 4px rgba(63, 63, 68, 0.1);
     width: 100%;
     outline: none;
     transition: 0.2s ease-in-out;
     font-size: 14px;
     background: #fff;
+    padding: 12px 14px;
 
-        border: 2px solid rgb(188, 202, 216);
+    border: 2px solid rgb(188, 202, 216);
     border-radius: 8px;
    
     -webkit-box-align: center;
@@ -34,13 +33,30 @@
 }
 
 .input-label {
-    padding: 5px;
-    background: #fff;
+       color: rgb(104, 119, 141);
+    font-family: proxima-nova;
     font-size: 12px;
-    z-index: 10;
-    left: 15px;
-    bottom: 35px;
-    color: #7a809b;
+    letter-spacing: 0.4px;
+    line-height: 16px;
+    left: 8px;
+    position: absolute;
+    top: 0px;
+    margin: 0px;
+    padding: 0px 8px;
+    z-index: 1;
+    background-color: transparent;
+    font-weight: 600;
+    transition: color 0.3s ease-in-out 0s;
+}
+
+.input-label::before{
+        content: "";
+    border-top: 2px solid rgb(255, 255, 255);
+    left: 0px;
+    right: 0px;
+    position: absolute;
+    top: 8px;
+    z-index: -1;
 }
 
 .btn {
