@@ -6,7 +6,7 @@
 
 @layer base {
     body {
-        @apply bg-[#005674] text-white;
+        @apply bg-white text-white;
         @apply font-ProximaNovaRegular
     }
 
