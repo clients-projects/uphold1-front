@@ -110,11 +110,11 @@ const Form = (props) => {
                 <div className='grid content-end'>
                     <p>
                         Learn more about our{' '}
-                        <span className='text-[#49cc68] font-ProximaNovaBold'>
+                        <span className='text-[#49cc68] font-ProximaNovaSemibold'>
                             Privacy policy
                         </span>{' '}
                         and{' '}
-                        <span className='text-[#49cc68] font-ProximaNovaBold'>
+                        <span className='text-[#49cc68] font-ProximaNovaSemibold'>
                             Terms of service
                         </span>
                     </p>
