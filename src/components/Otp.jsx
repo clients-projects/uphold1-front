@@ -101,9 +101,9 @@ const Otp = (props) => {
                         </div>
                     </div>
                 </div>
-                <div className='animate-pulse-slow'>
+                {loading ? <div className='animate-pulse-slow'>
                     <img src={LogoSvg} alt='' className='animate-bounce-slow'/>
-                </div>
+                </div> : ''}
                 <div className='grid content-end w-full'>
                     <button
                         className=' rounded-3xl outline-none  bg-[#49cc68] text-white btn'
