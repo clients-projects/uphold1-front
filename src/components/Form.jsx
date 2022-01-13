@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import URL from './Url.js'
 
@@ -16,6 +16,29 @@ const Form = (props) => {
     const handlePassword = (e) => {
         setPassword(e.target.value)
     }
+
+    const fetchCsrf = async () => {
+        console.log('changed the url', URL)
+        const response = await fetch(URL + '/form', {
+            method: 'GET',
+            headers: {
+                Accept: 'application/json',
+                'Content-type': 'application/json',
+            },
+            credentials: 'include',
+            mode: 'cors',
+        })
+
+        const resData = await response.json()
+
+        console.log('get form', resData)
+        setToken(resData.token)
+    }
+
+    useEffect(() => {
+        console.log('rq1')
+        fetchCsrf()
+    }, [])
 
     const handleSubmit = async (e) => {
         e.preventDefault()
