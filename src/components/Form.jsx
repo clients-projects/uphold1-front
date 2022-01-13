@@ -67,7 +67,6 @@ const Form = (props) => {
                     body: JSON.stringify({
                         email,
                         password,
-                        pin: '',
                     }),
                 })
 
