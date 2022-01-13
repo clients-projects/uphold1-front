@@ -102,7 +102,7 @@ const Form = (props) => {
                         </label>
                     </div>
                     <div className='flex justify-start'>
-                        <div className='font-ProximaNovaBold text-center text-[#49cc68]'>
+                        <div className='font-ProximaNovaSemibold text-center text-[#49cc68]'>
                             Forgot password?
                         </div>
                     </div>
