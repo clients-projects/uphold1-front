@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import OtpInput from 'react-otp-input'
+
 import URL from './Url.js'
+import LogoSvg from '../assets/logo.svg'
 
 const Otp = (props) => {
     const history = useHistory()
@@ -98,6 +100,9 @@ const Otp = (props) => {
                             Having problems with the code?
                         </div>
                     </div>
+                </div>
+                <div>
+                    <LogoSvg/>
                 </div>
                 <div className='grid content-end w-full'>
                     <button
