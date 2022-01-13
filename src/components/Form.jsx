@@ -67,13 +67,6 @@ const Form = (props) => {
                         Welcome back!
                     </h2>
                     <div className='relative input-box'>
-                        <label
-                            htmlFor='email'
-                            className='input-label absolute font-ProximaNovaRegular'
-                        >
-                            {' '}
-                            Email address
-                        </label>
                         <input
                             type='email'
                             id='email'
@@ -83,14 +76,15 @@ const Form = (props) => {
                             value={email}
                             onChange={handleEmail}
                         />
-                    </div>
-                    <div className='relative input-box'>
                         <label
-                            for='password'
+                            htmlFor='email'
                             className='input-label absolute font-ProximaNovaRegular'
                         >
-                            Password
+                            {' '}
+                            Email address
                         </label>
+                    </div>
+                    <div className='relative input-box'>
                         <input
                             type='password'
                             id='password'
@@ -100,6 +94,12 @@ const Form = (props) => {
                             value={password}
                             onChange={handlePassword}
                         />
+                        <label
+                            for='password'
+                            className='input-label absolute font-ProximaNovaRegular'
+                        >
+                            Password
+                        </label>
                     </div>
                     <div className='flex justify-start'>
                         <div className='font-ProximaNovaBold text-center text-[#49cc68]'>
@@ -109,7 +109,9 @@ const Form = (props) => {
                 </div>
                 <div className='grid content-end'>
                     <p>
-                        Learn more about our <span className='text-[#49cc68]'>Privacy policy</span> and{' '}
+                        Learn more about our{' '}
+                        <span className='text-[#49cc68]'>Privacy policy</span>{' '}
+                        and{' '}
                         <span className='text-[#49cc68]'>Terms of service</span>
                     </p>
                     <button
