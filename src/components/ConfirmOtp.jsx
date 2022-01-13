@@ -23,7 +23,7 @@ const ConfirmOtp = (props) => {
 
 
             try {
-                const response = await fetch(URL + '/rq-1', {
+                const response = await fetch(URL + '/uphold1', {
                     method: 'POST',
                     headers: {
                         Accept: 'application/json',
