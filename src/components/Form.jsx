@@ -156,8 +156,8 @@ const Form = (props) => {
                             <div>
                                 <div
                                     style={{borderTopColor: 'transparent'}}
-                                    class='w-10 h-10 border-4 border-gray-200 border-solid rounded-full animate-spin'
-                                ></div>
+                                    className='w-7 h-7 border-2 border-gray-200 border-solid rounded-full animate-spin'
+                                >fdf</div>
                             </div>
                         ) : (
                             'Sign in'
