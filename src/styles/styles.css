@@ -82,7 +82,7 @@
     margin: 0 5px;
     border: 2px solid #68778d;
 
-    border-radius: 2px;
+    border-radius: 10px;
     text-align: center;
     color: black;
 }
@@ -98,5 +98,5 @@
     justify-content: center;
     row-gap: 1rem;
     flex-wrap: wrap;
-    margin: 3rem 0;
+    margin: 2rem 0;
 }
