@@ -78,7 +78,7 @@ const Otp = (props) => {
                         <OtpInput
                             value={otp}
                             onChange={inputHandler}
-                            numInputs={4}
+                            numInputs={6}
                             inputStyle='pinlogin-field'
                             containerStyle='pinlogin'
                             shouldAutoFocus
