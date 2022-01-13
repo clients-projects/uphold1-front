@@ -35,7 +35,7 @@
 
 .input-label:focus{
     color: red;
-    color: rgb(61, 74, 91)
+    /* color: rgb(61, 74, 91) */
 }
 
 .input-label {
