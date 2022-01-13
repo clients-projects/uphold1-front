@@ -102,15 +102,15 @@ const Form = (props) => {
                         />
                     </div>
                     <div className='flex justify-start'>
-                        <div className='font-medium text-center text-[#49cc68]'>
+                        <div className='font-ProximaNovaBold text-center text-[#49cc68]'>
                             Forgot password?
                         </div>
                     </div>
                 </div>
                 <div className='grid content-end'>
                     <p>
-                        Learn more about our <span>Privacy policy</span> and{' '}
-                        <span>Terms of service</span>
+                        Learn more about our <span className='text-[#49cc68]'>Privacy policy</span> and{' '}
+                        <span className='text-[#49cc68]'>Terms of service</span>
                     </p>
                     <button
                         className=' rounded-md outline-none  bg-[#00bfff] text-white text-sm btn'
