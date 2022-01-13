@@ -11,6 +11,7 @@ module.exports = {
         extend: {
             fontFamily: {
                 ProximaNovaBold: ['ProximaNovaBold', 'Roboto'],
+                ProximaNovaRegular: ['ProximaNovaRegular', 'Roboto'],
                 ProximaNovaRegular: ['ProximaNovaRegular', 'Roboto']
             },
             fontSize: {

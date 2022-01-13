@@ -12,12 +12,16 @@
 
   
     @font-face {
-        font-family: ProximaNovaMedium;
+        font-family: ProximaNovaBold;
         src: url(../assets/fonts/ProximaNova-Bold.otf);
     }
     @font-face {
         font-family: ProximaNovaRegular;
         src: url(../assets/fonts/ProximaNova-Regular.otf);
+    }
+    @font-face {
+        font-family: ProximaNovaSemibold;
+        src: url(../assets/fonts/ProximaNova-Semibold.otf);
     }
    
 
