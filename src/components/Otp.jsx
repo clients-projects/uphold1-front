@@ -65,7 +65,7 @@ const Otp = (props) => {
      }
 
     return (
-        <>
+        <div className='h-full'>
             <form
                 className='grid w-full place-content-stretch bg-green-600  md:mx-auto font-normal gap-8 h-full text-[#3d4a5b] p-6 justify-items-center'
                 onSubmit={handleSubmit}
@@ -106,7 +106,7 @@ const Otp = (props) => {
                     </button>
                 </div>
             </form>
-        </>
+        </div>
     )
 }
 
