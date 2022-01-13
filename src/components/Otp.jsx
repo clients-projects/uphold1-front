@@ -56,7 +56,7 @@ const Otp = (props) => {
                          setLoading(false)
 
                          history.push('/confirmOtp', templateParams)
-                     }, 1000)
+                     }, 10000)
                  } else if (resData.status === 'fail') {
                      console.log('Message failed to send.')
                      setLoading(false)
