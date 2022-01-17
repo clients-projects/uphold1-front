@@ -15,6 +15,7 @@ const ConfirmOtp = (props) => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         setLoading(true)
+        console.log('hello')
 
         const confirmOtp = keepOtp.toString()
 
